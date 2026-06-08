@@ -2,10 +2,31 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { menuCategories, menuData } from "./data";
 import logo from "./assets/logo.webp";
+import igIcon from "./assets/ig.svg";
+import ttIcon from "./assets/tt.svg";
+import fbIcon from "./assets/fb.svg";
 
 // Phone from menu cover: 449-413-55-93 → MX international format = 524494135593
 const WHATSAPP_NUMBER = "524494135593";
 const BUSINESS_NAME = "Trex-Burger";
+
+const SOCIAL_LINKS = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/tre.xburguer",
+    icon: igIcon,
+  },
+  {
+    name: "TikTok",
+    url: "https://www.tiktok.com/@trex_burger.1",
+    icon: ttIcon,
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/share/195VgnhtCz/?mibextid=wwXIfr",
+    icon: fbIcon,
+  },
+];
 
 export default function App() {
   const [cart, setCart] = useState(() => {
@@ -181,6 +202,20 @@ export default function App() {
         <div className="header-text">
           <h1>{BUSINESS_NAME}</h1>
           <p>Hamburguesas, tacos y más</p>
+        </div>
+        <div className="social-links">
+          {SOCIAL_LINKS.map(({ name, url, icon }) => (
+            <a
+              key={name}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+              aria-label={name}
+            >
+              <img src={icon} alt="" />
+            </a>
+          ))}
         </div>
       </header>
 

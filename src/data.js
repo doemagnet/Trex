@@ -208,10 +208,12 @@ export const menuData = [
   {
     id: 302,
     category: "Burros",
-    name: "Burro Mega (30 cm)",
+    name: "Burro Mega",
     description:
       "Bistec, asada o adobada, frijoles, queso, cebolla frita, chile toreado",
     priceBase: 90,
+    priceCombo: 120,
+    variantLabels: { base: "30 cm", combo: "40 cm" },
   },
   {
     id: 303,
@@ -591,6 +593,14 @@ export const menuData = [
     priceCombo: 70,
     variantLabels: { base: "1 Pza", combo: "Orden 3" },
   },
+  {
+    id: 708,
+    category: "Hot-Dogs",
+    name: "Hot-Dog Gigante",
+    priceBase: 35,
+    priceCombo: 90,
+    variantLabels: { base: "1 Pza", combo: "Orden 3" },
+  },
 
   // ─── ALAMBRES & ALITAS ──────────────────────────────────────
   {
@@ -622,6 +632,21 @@ export const menuData = [
     priceBase: 100,
     priceCombo: 350,
     variantLabels: { base: "180g", combo: "1 Kilo" },
+  },
+  {
+    id: 804,
+    category: "Alambres & Alitas",
+    name: "Trexdiritos",
+    description:
+      "Elige proteína: asada, adobada o bistec",
+    priceBase: 80,
+  },
+  {
+    id: 805,
+    category: "Alambres & Alitas",
+    name: "Trexdiritos de Arrachera",
+    description: "Tiras de arrachera",
+    priceBase: 100,
   },
 
   // ─── BEBIDAS ────────────────────────────────────────────────
