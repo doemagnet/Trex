@@ -1,0 +1,658 @@
+// src/data.js
+
+export const menuCategories = [
+  "Hamburguesas",
+  "Paquetes",
+  "Burros",
+  "Tortas",
+  "Antojitos",
+  "Tacos",
+  "Hot-Dogs",
+  "Alambres & Alitas",
+  "Bebidas",
+];
+
+/**
+ * Item schema:
+ *  - id, category, name        (required)
+ *  - description               (optional)
+ *  - priceBase                 (required) — main price
+ *  - priceCombo                (optional) — second variant price
+ *  - variantLabels             (optional) — { base, combo } overrides default "Sencilla" / "C/Papas"
+ *  - isIndividualItem          (optional) — appends "c/u" to price for per-unit items (e.g. tacos)
+ */
+export const menuData = [
+  // ─── HAMBURGUESAS ───────────────────────────────────────────
+  {
+    id: 101,
+    category: "Hamburguesas",
+    name: "Hamburguesa Sencilla",
+    description: "Carne, jamón, queso amarillo, verdura",
+    priceBase: 50,
+    priceCombo: 65,
+  },
+  {
+    id: 102,
+    category: "Hamburguesas",
+    name: "2 Hamburguesas Sencillas",
+    description: "Dos sencillas: carne, jamón, queso amarillo, verdura",
+    priceBase: 95,
+  },
+  {
+    id: 103,
+    category: "Hamburguesas",
+    name: "Hamburguesa 2 Quesos",
+    description: "Carne, jamón, queso amarillo y blanco, verdura",
+    priceBase: 55,
+    priceCombo: 70,
+  },
+  {
+    id: 104,
+    category: "Hamburguesas",
+    name: "Hamburguesa a la BBQ",
+    description:
+      "Carne bañada en salsa BBQ, jamón, queso amarillo y blanco, tocineta, verdura",
+    priceBase: 60,
+    priceCombo: 75,
+  },
+  {
+    id: 105,
+    category: "Hamburguesas",
+    name: "Hamburguesa Azteca",
+    description: "Carne, jamón, queso asadero, chorizo, verdura",
+    priceBase: 65,
+    priceCombo: 80,
+  },
+  {
+    id: 106,
+    category: "Hamburguesas",
+    name: "Hamburguesa Doble Carne",
+    description: "2 carnes, 2 jamones, 2 quesos, verdura",
+    priceBase: 75,
+    priceCombo: 90,
+  },
+  {
+    id: 107,
+    category: "Hamburguesas",
+    name: "Hamburguesa Hawayana",
+    description: "Carne, jamón, piña, queso blanco, tocineta, verdura",
+    priceBase: 80,
+    priceCombo: 95,
+  },
+  {
+    id: 108,
+    category: "Hamburguesas",
+    name: "Hamburguesa de Pollo",
+    description: "Pollo, jamón, piña, queso blanco, tocineta, verdura",
+    priceBase: 60,
+    priceCombo: 75,
+  },
+  {
+    id: 109,
+    category: "Hamburguesas",
+    name: "Hamburguesa Club",
+    description:
+      "Carne, jamón, queso asadero, champiñones, tocineta, verdura",
+    priceBase: 75,
+    priceCombo: 90,
+  },
+  {
+    id: 110,
+    category: "Hamburguesas",
+    name: "Hamburguesa Trex-Burger",
+    description:
+      "Carne, jamón, queso amarillo y blanco, salchicha, champiñones, tocino, carne p/asar, verdura",
+    priceBase: 100,
+    priceCombo: 115,
+  },
+  {
+    id: 111,
+    category: "Hamburguesas",
+    name: "Hamburguesa Cheesesteak",
+    description: "Carne, queso blanco, bistec, cebolla frita",
+    priceBase: 70,
+    priceCombo: 85,
+  },
+  {
+    id: 112,
+    category: "Hamburguesas",
+    name: "Hamburguesa c/Boneless",
+    description:
+      "Carne sabor arrachera con boneless bañado en salsa de tu preferencia, queso asadero, verdura",
+    priceBase: 100,
+    priceCombo: 115,
+  },
+  {
+    id: 113,
+    category: "Hamburguesas",
+    name: "Hamburguesa c/Pepperoni",
+    description:
+      "Carne sabor arrachera, queso gratinado, pepperoni y tocineta (sin verdura)",
+    priceBase: 80,
+    priceCombo: 95,
+  },
+  {
+    id: 114,
+    category: "Hamburguesas",
+    name: "Hamburguesa Monster",
+    description:
+      "350g de carne, queso amarillo y blanco, tocineta, jamón, sazonada con las especias secretas del dinosaurio. Incluye papas.",
+    priceBase: 110,
+  },
+  {
+    id: 115,
+    category: "Hamburguesas",
+    name: "Hamburguesa JR",
+    description: "Carne, queso amarillo (sin verdura)",
+    priceBase: 40,
+    priceCombo: 55,
+  },
+  {
+    id: 116,
+    category: "Hamburguesas",
+    name: "Hamburguesa Ranchera",
+    description:
+      "Carne, jamón, asada, jitomate, aguacate, frijoles",
+    priceBase: 75,
+    priceCombo: 90,
+  },
+  {
+    id: 117,
+    category: "Hamburguesas",
+    name: "Hamburguesa Mango Habanero",
+    description:
+      "Carne bañada en salsa de mango habanero, queso amarillo y blanco, jamón, tocineta, verdura",
+    priceBase: 60,
+    priceCombo: 75,
+  },
+
+  // ─── PAQUETES ───────────────────────────────────────────────
+  {
+    id: 201,
+    category: "Paquetes",
+    name: "Paquete #01",
+    description: "4 hamburguesas sencillas y una orden de papas",
+    priceBase: 200,
+  },
+  {
+    id: 202,
+    category: "Paquetes",
+    name: "Paquete #02",
+    description: "4 hamburguesas 2 quesos y una orden de salchipapas",
+    priceBase: 220,
+  },
+  {
+    id: 203,
+    category: "Paquetes",
+    name: "Paquete #03",
+    description: "3 hamburguesas: Hawayana, Club y 2 Quesos. Todas con papas.",
+    priceBase: 240,
+  },
+  {
+    id: 204,
+    category: "Paquetes",
+    name: "Paquete #04",
+    description: "Hamburguesa sencilla con papas y un chocomilk",
+    priceBase: 80,
+  },
+
+  // ─── BURROS ─────────────────────────────────────────────────
+  {
+    id: 301,
+    category: "Burros",
+    name: "Quesadilla Chica",
+    description:
+      "Elige proteína: bistec, asada, adobada o chorizo. Con cebolla frita y chile toreado.",
+    priceBase: 40,
+  },
+  {
+    id: 302,
+    category: "Burros",
+    name: "Burro Mega (30 cm)",
+    description:
+      "Bistec, asada o adobada, frijoles, queso, cebolla frita, chile toreado",
+    priceBase: 90,
+  },
+  {
+    id: 303,
+    category: "Burros",
+    name: "Quesadilla Gigante (30 cm)",
+    description:
+      "Bistec, asada o adobada, queso, cebolla frita, chile toreado",
+    priceBase: 70,
+  },
+  {
+    id: 304,
+    category: "Burros",
+    name: "Volcán",
+    description:
+      "Elige proteína: bistec, asada o adobada. Con queso, cebolla frita y chile toreado.",
+    priceBase: 30,
+  },
+  {
+    id: 305,
+    category: "Burros",
+    name: "Trex-Totopo",
+    description:
+      "Base de totopos, carne gratinada con queso, cebolla frita, chile toreado",
+    priceBase: 50,
+  },
+
+  // ─── TORTAS ─────────────────────────────────────────────────
+  {
+    id: 401,
+    category: "Tortas",
+    name: "Paquete Torta + Chocomilk",
+    description:
+      "Torta de jamón o salchicha (queso blanco, lechuga, jitomate, aguacate, chile jalapeño) + un chocomilk",
+    priceBase: 60,
+  },
+  {
+    id: 402,
+    category: "Tortas",
+    name: "Torta de Jamón",
+    description:
+      "Jamón, queso blanco, lechuga, jitomate, aguacate, chile jalapeño",
+    priceBase: 40,
+    priceCombo: 80,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 403,
+    category: "Tortas",
+    name: "Torta de Salchicha",
+    description:
+      "Salchicha, queso blanco, lechuga, jitomate, aguacate, chile jalapeño",
+    priceBase: 40,
+    priceCombo: 80,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 404,
+    category: "Tortas",
+    name: "Torta Cubana",
+    description:
+      "Adobada, salchicha p/asar, salchicha normal, tocineta, cebolla frita, piña, verdura, queso asadero",
+    priceBase: 70,
+    priceCombo: 140,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 405,
+    category: "Tortas",
+    name: "Torta de Chorizo",
+    description:
+      "Chorizo, queso blanco, aguacate, chile jalapeño, lechuga, jitomate",
+    priceBase: 45,
+    priceCombo: 90,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 406,
+    category: "Tortas",
+    name: "Torta de Carne Adobada (sin queso)",
+    description: "Adobada, aguacate, jitomate, chile jalapeño",
+    priceBase: 50,
+    priceCombo: 100,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 407,
+    category: "Tortas",
+    name: "Torta de Carne Adobada (con queso)",
+    description: "Adobada, queso, aguacate, jitomate, chile jalapeño",
+    priceBase: 55,
+    priceCombo: 110,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 408,
+    category: "Tortas",
+    name: "Torta Apocalíptica",
+    description:
+      "Adobada, salchicha p/asar, salchicha normal, piña, jamón, queso asadero, queso amarillo, fajitas de arrachera, tocineta, verdura",
+    priceBase: 80,
+    priceCombo: 150,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 409,
+    category: "Tortas",
+    name: "Torta Toluqueña",
+    description:
+      "Salchicha, chorizo, queso blanco, chile jalapeño, verdura",
+    priceBase: 55,
+    priceCombo: 100,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 410,
+    category: "Tortas",
+    name: "Torta Hawayana",
+    description: "Jamón, piña, queso asadero, chile jalapeño",
+    priceBase: 60,
+    priceCombo: 120,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 411,
+    category: "Tortas",
+    name: "Torta de Carne Asada (sin queso)",
+    description: "Asada, cebolla frita, chile toreado, salsa",
+    priceBase: 50,
+    priceCombo: 100,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 412,
+    category: "Tortas",
+    name: "Torta de Carne Asada (con queso)",
+    description: "Asada, queso, cebolla frita, chile toreado, salsa",
+    priceBase: 55,
+    priceCombo: 110,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 413,
+    category: "Tortas",
+    name: "Torta de Bistec (sin queso)",
+    description: "Bistec, cebolla frita, chile toreado, salsa",
+    priceBase: 50,
+    priceCombo: 100,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 414,
+    category: "Tortas",
+    name: "Torta de Bistec (con queso)",
+    description: "Bistec, queso, cebolla frita, chile toreado, salsa",
+    priceBase: 55,
+    priceCombo: 110,
+    variantLabels: { base: "Sencilla", combo: "Doble" },
+  },
+  {
+    id: 415,
+    category: "Tortas",
+    name: "Sandwich de Jamón",
+    description: "Jamón con verdura",
+    priceBase: 40,
+    priceCombo: 55,
+  },
+  {
+    id: 416,
+    category: "Tortas",
+    name: "Sandwich de Salchicha",
+    description: "Salchicha con verdura",
+    priceBase: 40,
+    priceCombo: 55,
+  },
+  {
+    id: 417,
+    category: "Tortas",
+    name: "Sandwich de Chorizo",
+    description: "Chorizo con verdura",
+    priceBase: 45,
+    priceCombo: 60,
+  },
+
+  // ─── ANTOJITOS ──────────────────────────────────────────────
+  {
+    id: 501,
+    category: "Antojitos",
+    name: "Sincronizada de Jamón",
+    description: "Jamón, queso, verdura",
+    priceBase: 45,
+  },
+  {
+    id: 502,
+    category: "Antojitos",
+    name: "Sincronizada de Chorizo",
+    description: "Chorizo, queso, verdura",
+    priceBase: 50,
+  },
+  {
+    id: 503,
+    category: "Antojitos",
+    name: "Sincronizada de Carne",
+    description: "Bistec, asada, adobada o chorizo, queso, verdura",
+    priceBase: 50,
+  },
+  {
+    id: 504,
+    category: "Antojitos",
+    name: "Orden de Papas",
+    description: "A la francesa",
+    priceBase: 50,
+    priceCombo: 70,
+    variantLabels: { base: "Chica", combo: "Grande" },
+  },
+  {
+    id: 505,
+    category: "Antojitos",
+    name: "Papas de Gajo (250g)",
+    description: "Con queso amarillo",
+    priceBase: 70,
+  },
+  {
+    id: 506,
+    category: "Antojitos",
+    name: "Papas c/Queso Amarillo y Tocino",
+    priceBase: 70,
+    priceCombo: 80,
+    variantLabels: { base: "Chica", combo: "Grande" },
+  },
+  {
+    id: 507,
+    category: "Antojitos",
+    name: "Banderilla",
+    priceBase: 25,
+    priceCombo: 40,
+    variantLabels: { base: "S/Papas", combo: "C/Papas" },
+  },
+  {
+    id: 508,
+    category: "Antojitos",
+    name: "Salchipapas",
+    priceBase: 60,
+    priceCombo: 90,
+    variantLabels: { base: "Chica", combo: "Grande" },
+  },
+  {
+    id: 509,
+    category: "Antojitos",
+    name: "Dedos de Queso",
+    priceBase: 35,
+    priceCombo: 50,
+    variantLabels: { base: "S/Papas", combo: "C/Papas" },
+  },
+  {
+    id: 510,
+    category: "Antojitos",
+    name: "Salchipulpos",
+    priceBase: 45,
+    priceCombo: 75,
+    variantLabels: { base: "Chico", combo: "Grande" },
+  },
+  {
+    id: 511,
+    category: "Antojitos",
+    name: "Nuggets",
+    priceBase: 35,
+    priceCombo: 50,
+    variantLabels: { base: "S/Papas", combo: "C/Papas" },
+  },
+  {
+    id: 512,
+    category: "Antojitos",
+    name: "Aros de Cebolla",
+    priceBase: 40,
+    priceCombo: 50,
+    variantLabels: { base: "S/Papas", combo: "C/Papas" },
+  },
+
+  // ─── TACOS ──────────────────────────────────────────────────
+  {
+    id: 601,
+    category: "Tacos",
+    name: "Taco de Carne Asada",
+    description: "Cebolla frita, chile toreado, salsa y verdura",
+    priceBase: 15,
+    isIndividualItem: true,
+  },
+  {
+    id: 602,
+    category: "Tacos",
+    name: "Taco de Bistec",
+    description: "Cebolla frita, chile toreado, salsa y verdura",
+    priceBase: 15,
+    isIndividualItem: true,
+  },
+  {
+    id: 603,
+    category: "Tacos",
+    name: "Taco de Adobada",
+    description: "Cebolla frita, chile toreado, salsa y verdura",
+    priceBase: 15,
+    isIndividualItem: true,
+  },
+  {
+    id: 604,
+    category: "Tacos",
+    name: "Taco de Chorizo",
+    description: "Cebolla frita, chile toreado, salsa y verdura",
+    priceBase: 15,
+    isIndividualItem: true,
+  },
+  {
+    id: 605,
+    category: "Tacos",
+    name: "Plato de Carne",
+    description:
+      "Asada, adobada, chorizo, bistec o mixto. Tortillas, salsas, verdura, cebolla frita, chile toreado. (Desde $60 — confirma precio al ordenar)",
+    priceBase: 60,
+  },
+
+  // ─── HOT-DOGS ───────────────────────────────────────────────
+  {
+    id: 701,
+    category: "Hot-Dogs",
+    name: "Hot-Dog Sencillo",
+    priceBase: 20,
+    priceCombo: 55,
+    variantLabels: { base: "1 Pza", combo: "Orden 3" },
+  },
+  {
+    id: 702,
+    category: "Hot-Dogs",
+    name: "Hot-Dog Hawayano",
+    priceBase: 30,
+    priceCombo: 80,
+    variantLabels: { base: "1 Pza", combo: "Orden 3" },
+  },
+  {
+    id: 703,
+    category: "Hot-Dogs",
+    name: "Hot-Dog con Champiñones",
+    priceBase: 25,
+    priceCombo: 70,
+    variantLabels: { base: "1 Pza", combo: "Orden 3" },
+  },
+  {
+    id: 704,
+    category: "Hot-Dogs",
+    name: "Hot-Dog a la BBQ",
+    priceBase: 25,
+    priceCombo: 70,
+    variantLabels: { base: "1 Pza", combo: "Orden 3" },
+  },
+  {
+    id: 705,
+    category: "Hot-Dogs",
+    name: "Hot-Dog Sencillo c/Tocino",
+    priceBase: 25,
+    priceCombo: 70,
+    variantLabels: { base: "1 Pza", combo: "Orden 3" },
+  },
+  {
+    id: 706,
+    category: "Hot-Dogs",
+    name: "Hot-Dog Revoltoso",
+    description:
+      "Totopos, carne (asada, adobada, chorizo o bistec), mixta",
+    priceBase: 30,
+    priceCombo: 85,
+    variantLabels: { base: "1 Pza", combo: "Orden 3" },
+  },
+  {
+    id: 707,
+    category: "Hot-Dogs",
+    name: "Hot-Dog con Salsa Mango Habanero",
+    priceBase: 25,
+    priceCombo: 70,
+    variantLabels: { base: "1 Pza", combo: "Orden 3" },
+  },
+
+  // ─── ALAMBRES & ALITAS ──────────────────────────────────────
+  {
+    id: 801,
+    category: "Alambres & Alitas",
+    name: "Alambre",
+    description:
+      "Bistec, asada, adobada o chorizo + pimiento morrón, jamón, tocino, salchicha, queso gratinado, cebolla frita, chile toreado, verdura aparte",
+    priceBase: 70,
+    priceCombo: 100,
+    variantLabels: { base: "Chico", combo: "Grande" },
+  },
+  {
+    id: 802,
+    category: "Alambres & Alitas",
+    name: "Alitas",
+    description:
+      "Acompañadas de papas a la francesa, pepino, zanahoria y aderezos",
+    priceBase: 100,
+    priceCombo: 350,
+    variantLabels: { base: "6 Pzas", combo: "1 Kilo" },
+  },
+  {
+    id: 803,
+    category: "Alambres & Alitas",
+    name: "Boneless c/Papas",
+    description:
+      "180g, bañadas en salsa BBQ, mango habanero, búfalo o lemon pepper",
+    priceBase: 100,
+    priceCombo: 350,
+    variantLabels: { base: "180g", combo: "1 Kilo" },
+  },
+
+  // ─── BEBIDAS ────────────────────────────────────────────────
+  {
+    id: 901,
+    category: "Bebidas",
+    name: "Agua Fresca",
+    priceBase: 25,
+    priceCombo: 35,
+    variantLabels: { base: "1/2 Litro", combo: "1 Litro" },
+  },
+  {
+    id: 902,
+    category: "Bebidas",
+    name: "Coca-Cola",
+    priceBase: 22,
+    priceCombo: 27,
+    variantLabels: { base: "500 ml", combo: "600 ml" },
+  },
+  {
+    id: 903,
+    category: "Bebidas",
+    name: "Chocomilk",
+    priceBase: 25,
+    priceCombo: 50,
+    variantLabels: { base: "1/2 Litro", combo: "1 Litro" },
+  },
+  {
+    id: 904,
+    category: "Bebidas",
+    name: "Frappé",
+    priceBase: 30,
+  },
+];
