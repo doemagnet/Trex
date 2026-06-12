@@ -5,6 +5,7 @@ import logo from "./assets/logo.webp";
 import igIcon from "./assets/ig.svg";
 import ttIcon from "./assets/tt.svg";
 import fbIcon from "./assets/fb.svg";
+import bgMusic from "./assets/sound.mp3"; // <-- Imported sound
 
 // Phone from menu cover: 449-413-55-93 → MX international format = 524494135593
 const WHATSAPP_NUMBER = "524494135593";
@@ -46,6 +47,10 @@ export default function App() {
   });
   const [activeCategory, setActiveCategory] = useState(menuCategories[0]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  
+  // ─── Audio State & Ref ───────────────────────────────────────────
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
   const categoryRefs = useRef({});
   const navRef = useRef(null);
@@ -70,6 +75,18 @@ export default function App() {
   // Totals
   const totalItems = cart.reduce((s, c) => s + c.quantity, 0);
   const totalPrice = cart.reduce((s, c) => s + c.price * c.quantity, 0);
+
+  // ─── Audio actions ───────────────────────────────────────────────
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   // ─── Cart actions ────────────────────────────────────────────────
   const addToCart = (item, variant = "base", qty = 1) => {
@@ -361,6 +378,39 @@ export default function App() {
           </div>
         </>
       )}
+
+      {/* Hidden Audio Element */}
+      <audio ref={audioRef} src={bgMusic} loop />
+
+      {/* Floating Music Button */}
+      <button
+        onClick={toggleMusic}
+        aria-label={isPlaying ? "Pausar música" : "Reproducir música"}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          left: "20px", // Placed on the left to avoid the cart FAB
+          zIndex: 99,
+          width: "48px",
+          height: "48px",
+          borderRadius: "50%",
+          backgroundColor: "#1a1a1a",
+          color: "white",
+          border: "none",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "20px",
+          transition: "transform 0.2s ease"
+        }}
+        onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+        onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+      >
+        {isPlaying ? "⏸️" : "🎵"}
+      </button>
+
     </div>
   );
 }
