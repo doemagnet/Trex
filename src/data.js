@@ -214,7 +214,7 @@ export const menuData = [
     id: 207,
     category: "Paquetes",
     name: "Paquete #07",
-    description: "Hamburguesa sencilla, orden de hot-dogs sencillos (3 pzas) y chocomilk",
+    description: "Hamburguesa sencilla, orden de hot-dogs sencillos y chocomilk",
     priceBase: 110,
   },
   {
