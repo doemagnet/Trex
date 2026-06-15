@@ -196,6 +196,35 @@ export const menuData = [
     priceBase: 80,
   },
 
+  {
+    id: 205,
+    category: "Paquetes",
+    name: "Paquete #05",
+    description: "Una hamburguesa sencilla con papas, 4 pz de alitas al sabor de tu elección y chocomilk",
+    priceBase: 150,
+  },
+  {
+    id: 206,
+    category: "Paquetes",
+    name: "Paquete #06",
+    description: "5 tacos y una Coca-Cola",
+    priceBase: 100,
+  },
+  {
+    id: 207,
+    category: "Paquetes",
+    name: "Paquete #07",
+    description: "Hamburguesa sencilla, orden de hot-dogs sencillos (3 pzas) y chocomilk",
+    priceBase: 110,
+  },
+  {
+    id: 208,
+    category: "Paquetes",
+    name: "Paquete #08",
+    description: "2 hamburguesas sencillas con papas y 2 tortas de jamón sencillas",
+    priceBase: 200,
+  },
+
   // ─── BURROS ─────────────────────────────────────────────────
   {
     id: 301,
@@ -233,7 +262,7 @@ export const menuData = [
   },
   {
     id: 305,
-    category: "Burros",
+    category: "Alambres & Alitas",
     name: "Trex-Totopo",
     description:
       "Base de totopos, carne gratinada con queso, cebolla frita, chile toreado",
@@ -636,7 +665,7 @@ export const menuData = [
   {
     id: 804,
     category: "Alambres & Alitas",
-    name: "Trexdiritos",
+    name: "Trex-Doritos",
     description:
       "Elige proteína: asada, adobada o bistec",
     priceBase: 80,
@@ -644,7 +673,7 @@ export const menuData = [
   {
     id: 805,
     category: "Alambres & Alitas",
-    name: "Trexdiritos de Arrachera",
+    name: "Trex-Doritos de Arrachera",
     description: "Tiras de arrachera",
     priceBase: 100,
   },
@@ -679,5 +708,12 @@ export const menuData = [
     category: "Bebidas",
     name: "Frappé",
     priceBase: 30,
+  },
+  {
+    id: 905,
+    category: "Bebidas",
+    name: "Frappé con Opciones",
+    description: "Elige tu sabor: Gansito, Chocorrol o Pingüino",
+    priceBase: 45,
   },
 ];
