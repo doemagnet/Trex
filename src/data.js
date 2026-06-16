@@ -707,7 +707,7 @@ export const menuData = [
     id: 904,
     category: "Bebidas",
     name: "Frappé",
-    priceBase: 30,
+    priceBase: 35,
   },
   {
     id: 905,
