@@ -224,6 +224,13 @@ export const menuData = [
     description: "2 hamburguesas sencillas con papas y 2 tortas de jamón sencillas",
     priceBase: 200,
   },
+  {
+  id: 209,
+  category: "Paquetes",
+  name: "Paquete #09",
+  description: "Torta de jamón o salchicha y choco",
+  priceBase: 60,
+},
 
   // ─── BURROS ─────────────────────────────────────────────────
   {
